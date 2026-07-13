@@ -1,0 +1,135 @@
+---
+title: "Computação Científica para Física"
+---
+
+> **Uma introdução moderna à Computação Científica para estudantes de Física e Engenharia utilizando Python.**
+
+Bem-vindo ao **Computação Científica para Física**, um projeto educacional de longo prazo que integra programação científica, análise de dados, visualização, métodos numéricos e Física em uma única trilha de aprendizagem.
+
+O objetivo deste projeto é mostrar que a programação não deve ser aprendida separadamente da Física, mas sim como uma ferramenta para compreender fenômenos físicos, construir modelos computacionais e analisar resultados.
+
+Este material é desenvolvido continuamente e pretende evoluir ao longo do tempo até se tornar um recurso completo para estudantes de graduação, professores e pesquisadores.
+
+---
+
+## Objetivos
+
+Este projeto busca:
+
+- Introduzir a Computação Científica utilizando Python.
+- Ensinar programação aplicada à Física.
+- Desenvolver habilidades em análise e visualização de dados científicos.
+- Apresentar métodos numéricos de forma gradual e contextualizada.
+- Complementar o ensino tradicional de Física com experimentos computacionais.
+- Disponibilizar um recurso educacional aberto e gratuito.
+
+---
+
+## Organização do Projeto
+
+O conteúdo está organizado em quatro grandes partes.
+
+### Parte I — Computação Científica
+
+Introdução às ferramentas fundamentais utilizadas ao longo de todo o projeto.
+
+Entre os tópicos abordados estão:
+
+- Python
+- Jupyter Notebooks
+- NumPy
+- Pandas
+- Matplotlib
+- SciPy
+- Organização de projetos científicos
+
+---
+
+### Parte II — Física e Ciência de Dados
+
+Introdução aos conceitos fundamentais de análise de dados científicos.
+
+Os notebooks desta parte abordam temas como:
+
+- análise de dados experimentais;
+- visualização científica;
+- estatística descritiva;
+- regressão;
+- mínimos quadrados;
+- incertezas experimentais;
+- comunicação de resultados científicos.
+
+---
+
+### Parte III — Física
+
+A maior parte do projeto é dedicada às disciplinas tradicionais da graduação.
+
+O conteúdo segue aproximadamente a sequência de um curso universitário:
+
+- Física I — Mecânica
+- Física II — Ondas, Fluidos e Termodinâmica
+- Física III — Eletromagnetismo
+- Física IV — Óptica e Física Moderna
+
+Cada notebook combina teoria, implementação computacional, visualizações, simulações e exercícios.
+
+---
+
+### Parte IV — Métodos Numéricos
+
+Os algoritmos utilizados ao longo do projeto são reunidos nesta seção, onde são estudados de forma mais aprofundada.
+
+Entre os tópicos previstos estão:
+
+- diferenciação numérica;
+- integração numérica;
+- busca de raízes;
+- interpolação;
+- sistemas lineares;
+- equações diferenciais ordinárias;
+- equações diferenciais parciais;
+- métodos de Monte Carlo;
+- otimização.
+
+---
+
+## Público-alvo
+
+Este projeto foi desenvolvido principalmente para:
+
+- estudantes de graduação em Física;
+- estudantes de Engenharia;
+- professores;
+- pesquisadores iniciando em Computação Científica;
+- qualquer pessoa interessada em aprender Física utilizando Python.
+
+---
+
+## Tecnologias
+
+Todo o conteúdo é desenvolvido utilizando ferramentas livres e de código aberto.
+
+- Python
+- Jupyter Notebook
+- NumPy
+- Pandas
+- Matplotlib
+- SciPy
+- Quarto
+
+---
+
+## Desenvolvimento Contínuo
+
+Este é um projeto de longo prazo.
+
+Novos notebooks, exemplos, simulações e animações serão adicionados continuamente, acompanhando os principais tópicos da graduação em Física e Engenharia.
+
+O objetivo é construir, ao longo do tempo, um recurso educacional completo em Computação Científica para Física.
+
+---
+
+## Licença
+
+Este projeto é disponibilizado sob a licença MIT.
