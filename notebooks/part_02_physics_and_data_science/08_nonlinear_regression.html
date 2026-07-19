@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>todo – Computação Científica para Física</title>
+<title>08 - Regressão Não Linear – Computação Científica para Física</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,30 +23,65 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-56c6ba344ce1fe9ce567c839fcaaa1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e62e535e3da6ef647fc583e7cb8f0564.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-56c6ba344ce1fe9ce567c839fcaaa1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-6b6957c917596b414ec0b78690761e87.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de63f62b328812d8e578a4d74e282472.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-56c6ba344ce1fe9ce567c839fcaaa1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-e62e535e3da6ef647fc583e7cb8f0564.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-56c6ba344ce1fe9ce567c839fcaaa1fb.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -247,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Computação Científica para Física</span>
     </a>
   </div>
@@ -258,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Início</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -267,35 +302,229 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-parte-i">    
         <li>
-    <a class="dropdown-item" href="./notebooks/part_01_scientific_computing/01_what_is_scientific_computing.html">
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/01_what_is_scientific_computing.html">
  <span class="dropdown-text">01 - O que é Computação Científica?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/02_python_fundamentals.html">
+ <span class="dropdown-text">02 - Fundamentos de Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/03_jupyter_notebooks.html">
+ <span class="dropdown-text">03 - Jupyter Notebooks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/04_numpy.html">
+ <span class="dropdown-text">04 - NumPy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/05_pandas.html">
+ <span class="dropdown-text">05 - Pandas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/06_matplotlib.html">
+ <span class="dropdown-text">06 - Matplotlib</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/07_scipy.html">
+ <span class="dropdown-text">07 - SciPy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_01_scientific_computing/08_project_organization.html">
+ <span class="dropdown-text">08 - Organização de Projetos Científicos</span></a>
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Parte II</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-parte-ii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Parte II</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-parte-ii">    
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/01_data_in_physics.html">
+ <span class="dropdown-text">01 - Dados em Física</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Física I</span></a>
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/02_scientific_visualization.html">
+ <span class="dropdown-text">02 - Visualização Científica</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Física II</span></a>
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/03_reading_experimental_data.html">
+ <span class="dropdown-text">03 - Leitura de Dados Experimentais</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Física III</span></a>
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/04_descriptive_statistics.html">
+ <span class="dropdown-text">04 - Estatística Descritiva</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Física IV</span></a>
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/05_measurement_uncertainties.html">
+ <span class="dropdown-text">05 - Incertezas de Medição</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Métodos Numéricos</span></a>
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/06_least_squares.html">
+ <span class="dropdown-text">06 - Mínimos Quadrados</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/07_linear_regression.html">
+ <span class="dropdown-text">07 - Regressão Linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/08_nonlinear_regression.html">
+ <span class="dropdown-text">08 - Regressão Não Linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_02_physics_and_data_science/09_scientific_reporting.html">
+ <span class="dropdown-text">09 - Comunicação Científica</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-física-i" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Física I</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-física-i">    
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/01_vectors.html">
+ <span class="dropdown-text">01 - Vetores</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/02_kinematics.html">
+ <span class="dropdown-text">02 - Cinemática</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/03_newtons_laws.html">
+ <span class="dropdown-text">03 - Leis de Newton</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/04_work_and_energy.html">
+ <span class="dropdown-text">04 - Trabalho e Energia</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/05_linear_momentum.html">
+ <span class="dropdown-text">05 - Momento Linear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/06_rotational_motion.html">
+ <span class="dropdown-text">06 - Movimento Rotacional</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_1_mechanics/07_oscillations.html">
+ <span class="dropdown-text">07 - Oscilações</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-física-ii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Física II</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-física-ii">    
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_2_waves_fluids_thermodynamics/01_waves.html">
+ <span class="dropdown-text">01 - Ondas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_2_waves_fluids_thermodynamics/02_wave_superposition.html">
+ <span class="dropdown-text">02 - Superposição de Ondas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_2_waves_fluids_thermodynamics/03_fluids.html">
+ <span class="dropdown-text">03 - Fluidos</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_2_waves_fluids_thermodynamics/04_thermodynamics.html">
+ <span class="dropdown-text">04 - Termodinâmica</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-física-iii" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Física III</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-física-iii">    
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_3_electromagnetism/01_electrostatics.html">
+ <span class="dropdown-text">01 - Eletrostática</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_3_electromagnetism/02_electric_potential.html">
+ <span class="dropdown-text">02 - Potencial Elétrico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_3_electromagnetism/03_magnetism.html">
+ <span class="dropdown-text">03 - Magnetismo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_3_electromagnetism/04_electric_circuits.html">
+ <span class="dropdown-text">04 - Circuitos Elétricos</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-física-iv" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Física IV</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-física-iv">    
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_4_optics_modern_physics/01_geometrical_optics.html">
+ <span class="dropdown-text">01 - Óptica Geométrica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_4_optics_modern_physics/02_wave_optics.html">
+ <span class="dropdown-text">02 - Óptica Ondulatória</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_03_physics/physics_4_optics_modern_physics/03_modern_physics.html">
+ <span class="dropdown-text">03 - Física Moderna</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-métodos-numéricos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Métodos Numéricos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-métodos-numéricos">    
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/01_numerical_differentiation.html">
+ <span class="dropdown-text">01 - Diferenciação Numérica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/02_numerical_integration.html">
+ <span class="dropdown-text">02 - Integração Numérica</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/03_root_finding.html">
+ <span class="dropdown-text">03 - Busca de Raízes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/04_interpolation.html">
+ <span class="dropdown-text">04 - Interpolação</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/05_linear_systems.html">
+ <span class="dropdown-text">05 - Sistemas Lineares</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/06_ordinary_differential_equations.html">
+ <span class="dropdown-text">06 - Equações Diferenciais Ordinárias</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/07_partial_differential_equations.html">
+ <span class="dropdown-text">07 - Equações Diferenciais Parciais</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/08_monte_carlo_methods.html">
+ <span class="dropdown-text">08 - Métodos de Monte Carlo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/09_optimization.html">
+ <span class="dropdown-text">09 - Otimização</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../notebooks/part_04_numerical_methods/10_computational_complexity.html">
+ <span class="dropdown-text">10 - Complexidade Computacional</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -328,164 +557,78 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-structure" id="toc-project-structure" class="nav-link active" data-scroll-target="#project-structure">Project structure</a></li>
+  <li><a href="#motivação-física" id="toc-motivação-física" class="nav-link active" data-scroll-target="#motivação-física">1. Motivação Física</a></li>
+  <li><a href="#teoria" id="toc-teoria" class="nav-link" data-scroll-target="#teoria">2. Teoria</a></li>
+  <li><a href="#solução-analítica" id="toc-solução-analítica" class="nav-link" data-scroll-target="#solução-analítica">3. Solução Analítica</a></li>
+  <li><a href="#implementação-numérica" id="toc-implementação-numérica" class="nav-link" data-scroll-target="#implementação-numérica">4. Implementação Numérica</a></li>
+  <li><a href="#visualização" id="toc-visualização" class="nav-link" data-scroll-target="#visualização">5. Visualização</a></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios">6. Exercícios</a></li>
+  <li><a href="#extensões" id="toc-extensões" class="nav-link" data-scroll-target="#extensões">7. Extensões</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">08 - Regressão Não Linear</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
-<section id="project-structure" class="level1">
-<h1>Project structure</h1>
-<pre><code>scientific-computing-for-physics/
-│
-├── README.md                                    # Project overview.
-├── LICENSE                                      # MIT License.
-├── environment.yml                              # Conda environment.
-├── requirements.txt                             # Pip dependencies.
-├── pyproject.toml                               # Python package configuration.
-│
-├── _quarto.yml                                  # Quarto website configuration.
-├── index.qmd                                    # Website landing page.
-│
-├── notebooks/
-│   │
-│   ├── part_01_scientific_computing/
-│   │   │
-│   │   ├── 01_what_is_scientific_computing.ipynb
-│   │   ├── 02_python_fundamentals.ipynb
-│   │   ├── 03_jupyter_notebooks.ipynb
-│   │   ├── 04_numpy.ipynb
-│   │   ├── 05_pandas.ipynb
-│   │   ├── 06_matplotlib.ipynb
-│   │   ├── 07_scipy.ipynb
-│   │   └── 08_project_organization.ipynb
-│   │
-│   ├── part_02_physics_and_data_science/
-│   │   │
-│   │   ├── 01_data_in_physics.ipynb
-│   │   ├── 02_scientific_visualization.ipynb
-│   │   ├── 03_reading_experimental_data.ipynb
-│   │   ├── 04_descriptive_statistics.ipynb
-│   │   ├── 05_measurement_uncertainties.ipynb
-│   │   ├── 06_least_squares.ipynb
-│   │   ├── 07_linear_regression.ipynb
-│   │   ├── 08_nonlinear_regression.ipynb
-│   │   └── 09_scientific_reporting.ipynb
-│   │
-│   ├── part_03_physics/
-│   │   │
-│   │   ├── physics_1_mechanics/
-│   │   │   ├── 01_vectors.ipynb
-│   │   │   ├── 02_kinematics.ipynb
-│   │   │   ├── 03_newtons_laws.ipynb
-│   │   │   ├── 04_work_and_energy.ipynb
-│   │   │   ├── 05_linear_momentum.ipynb
-│   │   │   ├── 06_rotational_motion.ipynb
-│   │   │   ├── 07_oscillations.ipynb
-│   │   │   └── ...
-│   │   │
-│   │   ├── physics_2_waves_fluids_thermodynamics/
-│   │   │   ├── 01_waves.ipynb
-│   │   │   ├── 02_wave_superposition.ipynb
-│   │   │   ├── 03_fluids.ipynb
-│   │   │   ├── 04_thermodynamics.ipynb
-│   │   │   └── ...
-│   │   │
-│   │   ├── physics_3_electromagnetism/
-│   │   │   ├── 01_electrostatics.ipynb
-│   │   │   ├── 02_electric_potential.ipynb
-│   │   │   ├── 03_magnetism.ipynb
-│   │   │   ├── 04_electric_circuits.ipynb
-│   │   │   └── ...
-│   │   │
-│   │   └── physics_4_optics_modern_physics/
-│   │       ├── 01_geometrical_optics.ipynb
-│   │       ├── 02_wave_optics.ipynb
-│   │       ├── 03_modern_physics.ipynb
-│   │       └── ...
-│   │
-│   └── part_04_numerical_methods/
-│       │
-│       ├── 01_numerical_differentiation.ipynb
-│       ├── 02_numerical_integration.ipynb
-│       ├── 03_root_finding.ipynb
-│       ├── 04_interpolation.ipynb
-│       ├── 05_linear_systems.ipynb
-│       ├── 06_ordinary_differential_equations.ipynb
-│       ├── 07_partial_differential_equations.ipynb
-│       ├── 08_monte_carlo_methods.ipynb
-│       ├── 09_optimization.ipynb
-│       └── 10_computational_complexity.ipynb
-│
-├── src/
-│   │
-│   └── scientific_computing_for_physics/
-│       │
-│       ├── __init__.py
-│       ├── plotting.py
-│       ├── animation.py
-│       ├── numerical.py
-│       ├── statistics.py
-│       ├── physics.py
-│       ├── constants.py
-│       ├── datasets.py
-│       ├── style.py
-│       └── utilities.py
-│
-├── data/
-│   │
-│   ├── raw/                                    # Original datasets.
-│   ├── interim/                                # Intermediate processing.
-│   ├── processed/                              # Processed datasets.
-│   └── external/                               # External/public datasets.
-│
-├── figures/
-│   │
-│   ├── diagrams/                               # Conceptual diagrams.
-│   ├── plots/                                  # Generated figures.
-│   ├── illustrations/                          # Static illustrations.
-│   └── icons/                                  # Icons and symbols.
-│
-├── animations/
-│   │
-│   ├── gifs/                                   # GIF animations.
-│   ├── mp4/                                    # Video animations.
-│   └── html/                                   # Interactive HTML animations.
-│
-├── assets/
-│   │
-│   ├── css/                                    # Custom website styles.
-│   ├── images/                                 # Website images.
-│   ├── logos/                                  # Project logos.
-│   └── favicon/                                # Website favicon.
-│
-├── references/
-│   │
-│   ├── bibliography.bib                        # BibTeX bibliography.
-│   ├── books.md                                # Recommended books.
-│   ├── papers.md                               # Scientific papers.
-│   └── websites.md                             # Useful online resources.
-│
-├── scripts/
-│   │
-│   ├── build_site.py                           # Website build utilities.
-│   ├── generate_figures.py                     # Figure generation scripts.
-│   ├── generate_animations.py                  # Animation generation scripts.
-│   ├── download_datasets.py                    # Dataset download utilities.
-│   └── clean_outputs.py                        # Notebook/output cleanup.
-│
-└── docs/
-    │
-    ├── repository_structure.md                 # Repository organization.
-    ├── development_roadmap.md                  # Long-term roadmap.
-    ├── coding_standards.md                     # Coding conventions.
-    ├── contributing.md                         # Contribution guidelines.
-    └── references.md                           # Additional documentation.</code></pre>
+</header>
+
+
+<section id="motivação-física" class="level2">
+<h2 class="anchored" data-anchor-id="motivação-física">1. Motivação Física</h2>
+<p><em>(placeholder)</em></p>
+</section>
+<section id="teoria" class="level2">
+<h2 class="anchored" data-anchor-id="teoria">2. Teoria</h2>
+<p><em>(placeholder)</em></p>
+</section>
+<section id="solução-analítica" class="level2">
+<h2 class="anchored" data-anchor-id="solução-analítica">3. Solução Analítica</h2>
+<p><em>(placeholder)</em></p>
+</section>
+<section id="implementação-numérica" class="level2">
+<h2 class="anchored" data-anchor-id="implementação-numérica">4. Implementação Numérica</h2>
+<p><em>(placeholder)</em></p>
+<div id="cell-6" class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="visualização" class="level2">
+<h2 class="anchored" data-anchor-id="visualização">5. Visualização</h2>
+<p><em>(placeholder)</em></p>
+<div id="cell-8" class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="exercícios" class="level2">
+<h2 class="anchored" data-anchor-id="exercícios">6. Exercícios</h2>
+<p><em>(placeholder)</em></p>
+</section>
+<section id="extensões" class="level2">
+<h2 class="anchored" data-anchor-id="extensões">7. Extensões</h2>
+<p><em>(placeholder)</em></p>
 
 
 </section>
