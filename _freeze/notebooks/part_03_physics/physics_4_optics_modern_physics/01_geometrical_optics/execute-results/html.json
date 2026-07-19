@@ -1,0 +1,12 @@
+{
+  "hash": "f3efe4447c009c3a1bc44042450a65e6",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 01 - Óptica Geométrica\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#ba1beaca .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "01_geometrical_optics_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

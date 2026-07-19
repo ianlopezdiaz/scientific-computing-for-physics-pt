@@ -1,0 +1,12 @@
+{
+  "hash": "c2d27b62092b719c7740980533e03e44",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 06 - Equações Diferenciais Ordinárias\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#c8436e67 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "06_ordinary_differential_equations_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

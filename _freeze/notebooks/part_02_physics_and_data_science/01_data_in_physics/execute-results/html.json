@@ -1,0 +1,12 @@
+{
+  "hash": "18108ae0fe2b67f86265f502a8e587e2",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 01 - Dados em Física\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#10e888a9 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "01_data_in_physics_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

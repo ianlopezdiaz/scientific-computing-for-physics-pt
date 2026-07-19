@@ -1,0 +1,12 @@
+{
+  "hash": "0b409b2c7e5ad5a465cfc4cfbbe521c1",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 05 - Incertezas de Medição\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#6c466ade .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "05_measurement_uncertainties_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

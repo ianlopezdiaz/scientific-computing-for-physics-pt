@@ -1,0 +1,12 @@
+{
+  "hash": "afb587826178ea5c360a142f707d686c",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 04 - Interpolação\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#36b6eef8 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "04_interpolation_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

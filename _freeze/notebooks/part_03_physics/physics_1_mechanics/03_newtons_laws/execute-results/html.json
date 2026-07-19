@@ -1,0 +1,12 @@
+{
+  "hash": "77e900ff95092d570d56c314d5b71f77",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 03 - Leis de Newton\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#1877d514 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "03_newtons_laws_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

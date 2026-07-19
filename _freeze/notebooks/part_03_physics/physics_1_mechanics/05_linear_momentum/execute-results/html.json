@@ -1,0 +1,12 @@
+{
+  "hash": "3c9e926f4f28f8247eaa6fa70c4d6f99",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 05 - Momento Linear\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#218bce3f .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "05_linear_momentum_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

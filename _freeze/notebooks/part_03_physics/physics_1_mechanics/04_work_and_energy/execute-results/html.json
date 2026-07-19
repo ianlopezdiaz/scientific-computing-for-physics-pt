@@ -1,0 +1,12 @@
+{
+  "hash": "a76290d17756e1009f4a562bf8817bce",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 04 - Trabalho e Energia\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#bb77f992 .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "04_work_and_energy_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

@@ -113,7 +113,8 @@ Entre os tópicos previstos estão:
 * equações diferenciais ordinárias;
 * equações diferenciais parciais;
 * métodos de Monte Carlo;
-* otimização.
+* otimização;
+* complexidade computacional.
 
 Essa organização permite manter os capítulos de Física focados na interpretação dos fenômenos, enquanto os detalhes matemáticos e computacionais dos algoritmos ficam concentrados em um material de referência.
 

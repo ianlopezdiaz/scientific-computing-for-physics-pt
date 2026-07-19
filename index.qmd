@@ -29,7 +29,7 @@ Este projeto busca:
 
 O conteúdo está organizado em quatro grandes partes.
 
-### Parte I — Computação Científica
+### Parte I - Computação Científica
 
 Introdução às ferramentas fundamentais utilizadas ao longo de todo o projeto.
 
@@ -45,7 +45,7 @@ Entre os tópicos abordados estão:
 
 ---
 
-### Parte II — Física e Ciência de Dados
+### Parte II - Física e Ciência de Dados
 
 Introdução aos conceitos fundamentais de análise de dados científicos.
 
@@ -61,22 +61,22 @@ Os notebooks desta parte abordam temas como:
 
 ---
 
-### Parte III — Física
+### Parte III - Física
 
 A maior parte do projeto é dedicada às disciplinas tradicionais da graduação.
 
 O conteúdo segue aproximadamente a sequência de um curso universitário:
 
-- Física I — Mecânica
-- Física II — Ondas, Fluidos e Termodinâmica
-- Física III — Eletromagnetismo
-- Física IV — Óptica e Física Moderna
+- Física I - Mecânica
+- Física II - Ondas, Fluidos e Termodinâmica
+- Física III - Eletromagnetismo
+- Física IV - Óptica e Física Moderna
 
 Cada notebook combina teoria, implementação computacional, visualizações, simulações e exercícios.
 
 ---
 
-### Parte IV — Métodos Numéricos
+### Parte IV - Métodos Numéricos
 
 Os algoritmos utilizados ao longo do projeto são reunidos nesta seção, onde são estudados de forma mais aprofundada.
 
@@ -90,7 +90,8 @@ Entre os tópicos previstos estão:
 - equações diferenciais ordinárias;
 - equações diferenciais parciais;
 - métodos de Monte Carlo;
-- otimização.
+- otimização;
+- complexidade computacional.
 
 ---
 

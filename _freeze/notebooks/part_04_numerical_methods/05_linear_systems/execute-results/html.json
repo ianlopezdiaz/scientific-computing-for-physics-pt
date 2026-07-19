@@ -1,0 +1,12 @@
+{
+  "hash": "07cf850994b634e5456a78f760f0f4b9",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: 05 - Sistemas Lineares\n---\n\n\n\n\n## 1. Motivação Física\n_(placeholder)_\n\n## 2. Teoria\n_(placeholder)_\n\n## 3. Solução Analítica\n_(placeholder)_\n\n## 4. Implementação Numérica\n_(placeholder)_\n\n::: {#bc8e64eb .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\n```\n:::\n\n\n## 5. Visualização\n_(placeholder)_\n\n\n## 6. Exercícios\n_(placeholder)_\n\n## 7. Extensões\n_(placeholder)_\n\n",
+    "supporting": [
+      "05_linear_systems_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
